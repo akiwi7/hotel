@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<style>
+
+</style>
+<body>
+    <div id="hotelHeader">
+        <img src="hotel_icon.png" alt="Hotel Logo" id="hotelLogo">
+        <h1 id="hotelName">Pacific Horizon Resort</h1>
+    </div>
+
+    <div id="room1" class="room">
+        <div class="room-header">
+            <span class="room-title">Ocean View Suite</span>
+            <span id="lockRoom1" class="lock-icon" onclick="lockRoom1()">🔓</span>
+        </div>
+
+        <div class="room-body">
+            <input id="addName1" placeholder="Name to add">
+            <button id="addButton1" onclick="addGuest1()">Add Guest</button>
+
+            <input id="removeName1" placeholder="Name to remove">
+            <button id="removeButton1" onclick="removeGuest1()">Remove Guest</button>
+
+            <button class="clear-btn" onclick="clearRoom1()">Clear Room</button>
+            <p id="placeholder1"></p>
+        </div>
+    </div>
+
+    <div id="room2" class="room">
+        <div class="room-header">
+            <span class="room-title">Three Bedroom Penthouse</span>
+            <span id="lockRoom2" class="lock-icon" onclick="lockRoom2()">🔓</span>
+        </div>
+
+        <div class="room-body">
+            <input id="addName2" placeholder="Name to add">
+            <button id="addButton2" onclick="addGuest2()">Add Guest</button>
+
+            <input id="removeName2" placeholder="Name to remove">
+            <button id="removeButton2" onclick="removeGuest2()">Remove Guest</button>
+
+            <button class="clear-btn" onclick="clearRoom2()">Clear Room</button>
+            <p id="placeholder2"></p>
+        </div>
+    </div>
+
+    <div id="room3" class="room">
+        <div class="room-header">
+            <h2>Two Bedroom</h2>
+            <div id="lockRoom3" class="lock-icon" onclick="lockRoom3()">🔓</div>
+        </div>
+
+        <div class="room-body">
+            <input id="addName3" placeholder="Name to add">
+            <button id="addButton3" onclick="addGuest3()">Add Guest</button>
+
+            <input id="removeName3" placeholder="Name to remove">
+            <button id="removeButton3" onclick="removeGuest3()">Remove Guest</button>
+
+            <button class="clear-btn" onclick="clearRoom3()">Clear Room</button>
+            <p id="placeholder3"></p>
+        </div>
+    </div>
+
+    <div id="room4" class="room">
+        <div class="room-header">
+            <h2>Sunset Suite</h2>
+            <div id="lockRoom4" class="lock-icon" onclick="lockRoom4()">🔓</div>
+        </div>
+
+        <div class="room-body">
+            <input id="addName4" placeholder="Name to add">
+            <button id="addButton4" onclick="addGuest4()">Add Guest</button>
+
+            <input id="removeName4" placeholder="Name to remove">
+            <button id="removeButton4" onclick="removeGuest4()">Remove Guest</button>
+
+            <button class="clear-btn" onclick="clearRoom4()">Clear Room</button>
+            <p id="placeholder4"></p>
+        </div>
+    </div>
+
+    <div id="room5" class="room">
+        <div class="room-header">
+            <h2>Lagoon View Penthouse</h2>
+            <div id="lockRoom5" class="lock-icon" onclick="lockRoom5()">🔓</div>
+        </div>
+
+        <div class="room-body">
+            <input id="addName5" placeholder="Name to add">
+            <button id="addButton5" onclick="addGuest5()">Add Guest</button>
+
+            <input id="removeName5" placeholder="Name to remove">
+            <button id="removeButton5" onclick="removeGuest5()">Remove Guest</button>
+
+            <button class="clear-btn" onclick="clearRoom5()">Clear Room</button>
+            <p id="placeholder5"></p>
+        </div>
+    </div>
+
+    <div id="room6" class="room">
+        <div class="room-header">
+            <h2>One bedroom, Full Kitchen</h2>
+            <div id="lockRoom6" class="lock-icon" onclick="lockRoom6()">🔓</div>
+        </div>
+
+        <div class="room-body">
+            <input id="addName6" placeholder="Name to add">
+            <button id="addButton6" onclick="addGuest6()">Add Guest</button>
+
+            <input id="removeName6" placeholder="Name to remove">
+            <button id="removeButton6" onclick="removeGuest6()">Remove Guest</button>
+
+            <button class="clear-btn" onclick="clearRoom6()">Clear Room</button>
+            <p id="placeholder6"></p>
+        </div>
+    </div>
+
+    <div id="allGuestsTable"></div>
+</body>
+<script>
+    //Room1
+    document.getElementById('addName1').addEventListener('keyup', (event) => {
+    if (event.key === 'Enter' || event.code === 'Enter') {  addGuest1() }  });
+    document.getElementById('removeName1').addEventListener('keyup', (event) => {
+    if (event.key === 'Enter' || event.code === 'Enter') { removeGuest1() }  });
+
+
+    //Room2
+    document.getElementById('addName2').addEventListener('keyup', (event) => {
+    if (event.key === 'Enter' || event.code === 'Enter') { 
+        addGuest2() }  });
+    document.getElementById('removeName2').addEventListener('keyup', (event) => {
+    if (event.key === 'Enter' || event.code === 'Enter') { removeGuest2() }  });
+
+
+    //Room3
+    document.getElementById('addName3').addEventListener('keyup', (event) => {
+    if (event.key === 'Enter' || event.code === 'Enter') { 
+        addGuest3() }  });
+    document.getElementById('removeName3').addEventListener('keyup', (event) => {
+    if (event.key === 'Enter' || event.code === 'Enter') { removeGuest3() }  });
+
+
+    //Room4
+    document.getElementById('addName4').addEventListener('keyup', (event) => {
+    if (event.key === 'Enter' || event.code === 'Enter') { 
+        addGuest4() }  });
+    document.getElementById('removeName4').addEventListener('keyup', (event) => {
+    if (event.key === 'Enter' || event.code === 'Enter') { removeGuest4() }  });
+
+
+    //Room5
+    document.getElementById('addName5').addEventListener('keyup', (event) => {
+    if (event.key === 'Enter' || event.code === 'Enter') { 
+        addGuest5() }  });
+    document.getElementById('removeName5').addEventListener('keyup', (event) => {
+    if (event.key === 'Enter' || event.code === 'Enter') { removeGuest5() }  });
+
+
+    //Room6
+    document.getElementById('addName6').addEventListener('keyup', (event) => {
+    if (event.key === 'Enter' || event.code === 'Enter') { 
+        addGuest6() ;}  });
+    document.getElementById('removeName6').addEventListener('keyup', (event) => {
+    if (event.key === 'Enter' || event.code === 'Enter') { removeGuest6() }  });
+</script>
+</html>

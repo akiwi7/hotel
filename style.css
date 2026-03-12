@@ -1,0 +1,191 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;      /* spacing between cards */
+    justify-content: center;
+    padding: 30px;
+    background: linear-gradient(135deg, #bfe3ff, #e6f3ff);
+    margin: 0;
+}
+
+/* ====== CARD STYLE (matches example .card) ====== */
+.room {
+    background: rgba(255,255,255,0.92);
+    width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    backdrop-filter: blur(4px);
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.45);
+    padding: 0; /* important */
+}
+
+/* ====== HEADER (matches example .title) ====== */
+.room-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 14px 14px 14px 14px;
+}
+
+.room-title, .room-header h2 {
+    font-size: 20px;
+    margin: 0;
+    color: #045c8c; /* example's --card-title-color */
+}
+
+/* ====== LOCK ICON (matches example .lock-btn) ====== */
+.lock-icon {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* ====== BODY (matches example .bottom) ====== */
+.room-body {
+    padding: 0px 14px 14px 14px;
+    border-top: none;
+}
+
+/* ====== INPUT ROWS (matches example .input) ====== */
+.room-body h3 {
+    margin: 10px 0 6px 0;
+    font-size: 16px;
+    color: #045c8c;
+}
+
+.room-body input {
+    width: 100%;
+    padding: 8px;
+    background: #f7fbff;
+    border: 1px solid #8fbfe0;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.room-body button {
+    padding: 8px 10px;
+    background: #dff1ff;
+    border: 1px solid #8fbfe0;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.room-body button:hover {
+    background: #bfe3ff;
+}
+
+/* ====== GUEST LIST (matches example <ul>) ====== */
+.room-body p {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 16px 0 8px 0;   /* <-- increased top margin */
+    color: #033b5c;
+    font-size: 15px;
+
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+.clear-btn {
+    padding: 8px 10px;
+    width: 100%;
+    border-radius: 6px;
+    cursor: pointer;
+
+    /* Match Add/Remove exactly */
+    background: #dff1ff;
+    border: 1px solid #8fbfe0;
+    color: black;
+    font-weight: normal;      /* <-- fixes bold text */
+    margin-top: 10px;         /* <-- adds spacing */
+}
+
+.clear-btn:hover {
+    background: #bfe3ff;
+}
+
+#allGuestsTable {
+    position: relative;
+    width: 90%;
+    margin: 40px auto 0 auto;
+    padding: 40px 20px 20px 20px; /* extra top padding for the label */
+    background: rgba(255,255,255,0.92);
+    border: 1px solid rgba(255,255,255,0.45);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    font-size: 18px;
+    color: #033b5c;
+
+    white-space: normal;
+    word-wrap: break-word;
+}
+
+/* The label that JS cannot erase */
+#allGuestsTable::before {
+    content: "All Guests";
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    color: #045c8c;
+    font-weight: 600;
+}
+
+
+#hotelHeader {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-top: 20px;
+}
+
+#hotelLogo {
+    width: 350px;          /* adjust size as needed */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+#hotelName {
+    font-size: 50px;
+    color: #045c8c;        /* matches your card titles */
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.room-body input {
+    width: 100%;
+    padding: 8px;
+    background: #f7fbff;
+    border: 1px solid #8fbfe0;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+/* NEW: add spacing before the remove input */
+#removeName1,
+#removeName2,
+#removeName3,
+#removeName4,
+#removeName5,
+#removeName6 {
+    margin-top: 12px;
+}
+
+button:disabled,
+button:disabled:hover {
+    background: #e3f2ff;
+    border: 1px solid #aacbe3;
+    color: #7a9bb5;
+    cursor: not-allowed;
+}
