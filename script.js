@@ -14,6 +14,7 @@ let locked6 = 1
 
 let allGuests = []
 
+//creates numbered list for rooms
 function formatGuestList(list) {
     let output = "";
     for (let i = 0; i < list.length; i++) {
@@ -24,11 +25,14 @@ function formatGuestList(list) {
 
 function addGuest1() {
     if ((locked1 != 0) && (guests1.length <= 3)) {
+        //gets name and timestamp
         let timestamp = new Date().toLocaleString('en-US',{hour12: false}).replace(',', '');
         let getInput = document.getElementById('addName1').value.trim().toLowerCase()
+        //pushes name and timestamp into guest list as a list
         guests1.push([getInput, timestamp]);
         allGuests.push([getInput, timestamp]);
 
+        //updates text on webpage
         document.getElementById('placeholder1').innerHTML = formatGuestList(guests1);
         document.getElementById('allGuestsTable').innerHTML = formatGuestList(allGuests);
         document.getElementById('addName1').value = ""  }
@@ -95,11 +99,13 @@ function addGuest6() {
 
 function removeGuest1() {
     let guestName = document.getElementById('removeName1').value.trim().toLowerCase()
+    //check for name in guest list
     for (var i = 0; i < (guests1.length); i++) {
         if (guests1[i][0] == guestName) {
             guests1 = guests1.filter(
             function(value) {
                 return value != guests1[i]; });
+            //updates page
             document.getElementById('placeholder1').innerHTML = formatGuestList(guests1);
             document.getElementById('removeName1').value = ""
             break } 
@@ -287,4 +293,5 @@ function clearRoom5() {
 
 function clearRoom6() {
     guests6 = []
+
     document.getElementById('placeholder6').innerHTML = guests6 }
